@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19 Prediction</title>
+</head>
+<body>
+    <h1>Upload CSV for COVID-19 Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload & Predict</button>
+    </form>
+    
+    {% if prediction_result %}
+        <p>{{ prediction_result }}</p>
+    {% endif %}
+    
+    {% if download_link %}
+        <a href="{{ download_link }}" download>Download Predicted Results</a>
+    {% endif %}
+</body>
+</html>
