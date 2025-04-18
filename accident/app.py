@@ -23,6 +23,7 @@ def predict():
     
     if file.filename=='':
         return jsonify({'error':'No selected file'})
+
     
     if file:
         df=pd.read_csv(file)
